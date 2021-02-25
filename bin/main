@@ -24,8 +24,8 @@ player1 = Player.new(player_one_name)
 puts "Enter Player Two name:"
 player_two_name = gets.chomp
 puts "#{player_two_name} will play O" 
-player_two_move = gets.chomp
-player2 = Player.new(player_two_name)
+# player_two_move = gets.chomp
+# player2 = Player.new(player_two_name)
 
 #Board
 def display_board(board)
@@ -34,21 +34,24 @@ def display_board(board)
     puts " #{board[3]} | #{board[4]} | #{board[5]} "
     puts "-----------"
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
-  end
+end
   
   board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-  
   display_board(board)
-
 puts "it's #{player_one_name} turn to play"
 puts "Please select an available cell on the board..."
-player_one_move = gets.chomp
-
+player_one_move = Integer(gets.chomp)
+# puts player_one_move
+# if player_one_move !=  Integer
+    # puts "Invalid move please enter from 1-9"
+# elsif
 puts "it's #{player_two_name} turn to play"
 puts "Please select an available cell on the board..."
-player_two_move = gets.chomp
+player_two_move = Integer(gets.chomp)
+# puts player_two_move
+# else
+#     puts "Invalid move. Please enter 1-9"
+# end
 
-if player_one_move != 1..9 || player_two_move != 1..9 
-    puts "invalid move, Please enter a number from 1-9"
-    gets.chomp
-end
+
+
