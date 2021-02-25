@@ -1,2 +1,30 @@
 #!/usr/bin/env ruby
 puts 'Hello!'
+#User Interface
+puts "WELCOME TO RUBY'S TIC TAC TOE GAME"
+
+class Player
+    attr_reader :name 
+    attr_reader :move
+    def initialize(name, move)
+        @name = name
+        @move = move
+    end
+    
+end
+puts "Enter you name:"
+player_one_name = gets.chomp
+puts "Enter either X or O:"
+player_one_move = gets.chomp
+
+player1 = Player.new(player_one_name, player_one_move)
+# player1 = Player.get_name
+puts player1.name
+puts player1.move
+
+
+puts "Enter you name:"
+player_two_name = gets.chomp
+puts "Enter either X or O:"
+player_two_move = gets.chomp
+player2 = Player.new(player_two_name, player_two_move)
