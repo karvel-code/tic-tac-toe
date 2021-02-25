@@ -52,6 +52,26 @@ player_two_move = Integer(gets.chomp)
 # else
 #     puts "Invalid move. Please enter 1-9"
 # end
+puts "it's #{player_one_name} turn to play"
+puts "Please select an available cell on the board..."
+player_one_move = gets
+if player_one_move != Integer
+    puts "Invalid move, please input 1-9"
+    player_one_move = gets.chomp
+end
+
+puts "it's #{player_two_name} turn to play"
+puts "Please select an available cell on the board..."
+player_two_move = Integer(gets.chomp)
+puts "#{player_two_name} wins the Game!"
+
+puts "it's #{player_one_name} turn to play"
+puts "Please select an available cell on the board..."
+player_one_move = Integer(gets.chomp)
+puts "It's a tie"
+puts "Game Over"
+    
+
 
 
 
