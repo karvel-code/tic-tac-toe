@@ -5,26 +5,50 @@ puts "WELCOME TO RUBY'S TIC TAC TOE GAME"
 
 class Player
     attr_reader :name 
-    attr_reader :move
-    def initialize(name, move)
+   
+    def initialize(name)
         @name = name
-        @move = move
+       
     end
     
 end
-puts "Enter you name:"
+puts "Enter Player One name:"
 player_one_name = gets.chomp
-puts "Enter either X or O:"
+puts "#{player_one_name} will play X" 
+player1 = Player.new(player_one_name)
+# player1 = Player.get_name
+#puts player1.name
+
+
+
+puts "Enter Player Two name:"
+player_two_name = gets.chomp
+puts "#{player_two_name} will play O" 
+player_two_move = gets.chomp
+player2 = Player.new(player_two_name)
+
+#Board
+def display_board(board)
+    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+    puts "-----------"
+    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts "-----------"
+    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  end
+  
+  board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  
+  display_board(board)
+
+puts "it's #{player_one_name} turn to play"
+puts "Please select an available cell on the board..."
 player_one_move = gets.chomp
 
-player1 = Player.new(player_one_name, player_one_move)
-# player1 = Player.get_name
-puts player1.name
-puts player1.move
-
-
-puts "Enter you name:"
-player_two_name = gets.chomp
-puts "Enter either X or O:"
+puts "it's #{player_two_name} turn to play"
+puts "Please select an available cell on the board..."
 player_two_move = gets.chomp
-player2 = Player.new(player_two_name, player_two_move)
+
+if player_one_move != 1..9 || player_two_move != 1..9 
+    puts "invalid move, Please enter a number from 1-9"
+    gets.chomp
+end
