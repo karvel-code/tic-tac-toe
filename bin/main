@@ -1,32 +1,30 @@
 #!/usr/bin/env ruby
-puts 'Hello!'
+require_relative "../lib/player.rb"
 #User Interface
 puts "WELCOME TO RUBY'S TIC TAC TOE GAME"
 
-class Player
-    attr_reader :name 
-   
-    def initialize(name)
-        @name = name
-       
-    end
-    
-end
+
+
 puts "Enter Player One name:"
-player_one_name = gets.chomp
-puts "#{player_one_name} will play X" 
-player1 = Player.new(player_one_name)
-# player1 = Player.get_name
-#puts player1.name
+player_name = gets.chomp
+player1 = Player.new(player_name, "X")
+puts  "Hello #{player1.name} you will be playing with #{player1.symbol}."
 
 
 
 puts "Enter Player Two name:"
-player_two_name = gets.chomp
-puts "#{player_two_name} will play O" 
-# player_two_move = gets.chomp
-# player2 = Player.new(player_two_name)
+player_name = gets.chomp
+player2 = Player.new(player_name, "O")
+puts  "Hello #{player2.name} you will be playing with #{player2.symbol}."
 
+def validate(move)
+    move = move.to_i
+    if move < 10 && move.positive?
+        true
+    else
+        false
+    end
+end
 #Board
 def display_board(board)
     puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -36,41 +34,48 @@ def display_board(board)
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
   
-  board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   display_board(board)
-puts "it's #{player_one_name} turn to play"
-puts "Please select an available cell on the board..."
-player_one_move = Integer(gets.chomp)
-# puts player_one_move
-# if player_one_move !=  Integer
-    # puts "Invalid move please enter from 1-9"
-# elsif
-puts "it's #{player_two_name} turn to play"
-puts "Please select an available cell on the board..."
-player_two_move = Integer(gets.chomp)
-# puts player_two_move
-# else
-#     puts "Invalid move. Please enter 1-9"
-# end
-puts "it's #{player_one_name} turn to play"
-puts "Please select an available cell on the board..."
-player_one_move = gets
-if player_one_move != Integer
-    puts "Invalid move, please input 1-9"
-    player_one_move = gets.chomp
+
+def draw 
+    false
 end
 
-puts "it's #{player_two_name} turn to play"
-puts "Please select an available cell on the board..."
-player_two_move = Integer(gets.chomp)
-puts "#{player_two_name} wins the Game!"
+def win
+    winning = 0
+    if winning == 1
+        puts "#{player1.name} has won"
+    elsif winning == 2
+        puts "#{player2.name} has won"
+    elsif draw
+        winning == 3
+        puts "Its a tie"
+    end
+    winning
+end
 
-puts "it's #{player_one_name} turn to play"
-puts "Please select an available cell on the board..."
-player_one_move = Integer(gets.chomp)
-puts "It's a tie"
-puts "Game Over"
-    
+game_on = true
+while game_on 
+ puts "#{player1.name} choose between 1 - 9"
+    move = gets.chomp
+    while !validate(move)
+            puts "Enter valid move"
+            move = gets.chomp
+            break if validate(move)
+            
+    end
+    win
+    puts "#{player2.name} choose between 1 - 9"
+    move = gets.chomp
+    while !validate(move)
+            puts "Enter valid move"
+            move = gets.chomp
+            break if validate(move)
+    end
+    win
+    game_on = false unless win.zero?
+end
+
 
 
 
