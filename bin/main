@@ -62,7 +62,7 @@ while count <= 9
     break if validate(move)
 
   end
-#   board[move.to_i - 1] = 'X'
+  #   board[move.to_i - 1] = 'X'
   display_board(board)
   count += 1
   win
@@ -73,7 +73,7 @@ while count <= 9
     move = gets.chomp
     break if validate(move)
   end
-#   board[move.to_i - 1] = 'O'
+  #   board[move.to_i - 1] = 'O'
   display_board(board)
   count += 1
   win
@@ -81,4 +81,4 @@ while count <= 9
 end
 
 puts "#{player1.name} is the winner."
-puts "GAME OVER"
+puts 'GAME OVER'
