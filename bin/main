@@ -14,24 +14,6 @@ player_two = gets.chomp
 player2 = Player.new(player_two, 'O')
 puts "Hello #{player_two} you will be playing with #{player2.symbol}."
 
-# def player_info(player1, player2)
-#   puts "PLayer 1 is #{player1.name} and symbol is #{player1.symbol}"
-#   puts "PLayer 2 is #{player2.name} and symbol is #{player2.symbol}"
-# end
-
-# player_info(player1, player2)
-
-
-# def validate(move_play)
-#   move_play = move_play.to_i
-#   if move_play < 10 && move_play.positive?
-#     true
-#   else
-#     false
-#   end
-# end
-
-# Board
 def display_board(new_board)
   user_input = []
   new_board.each do |x|
@@ -50,11 +32,6 @@ end
 board = []
 9.times { board.push(0) }
 
-
-
-# board = %w[0 0 0 0 0 0 0 0 0]
-# display_board(board)
-
 game_on = true
 new_game = GamePlay.new
 
@@ -65,7 +42,7 @@ def win(new_game, game_on)
     puts "Player 1 has won"
   elsif winning == 2
     puts "Player 2 has won"
-  else winning == 3
+  elsif winning == 3
     puts "Its is a tie"
   end
   game_on
@@ -84,11 +61,9 @@ while game_on
 
   end
   new_game.board_update(move_play, player1.symbol)
-  #   board[move.to_i - 1] = 'X'
   display_board(new_game.board)
   game_on = win(new_game, game_on)
-  break if !game_on 
-  # win
+  break if game_on == false
   puts "#{player2.name} choose between 1 - 9"
   move_play2 = gets.chomp.to_i
   check_valid2 = new_game.validate(move_play2)
@@ -99,12 +74,7 @@ while game_on
     break if check_valid2[0]
   end
   new_game.board_update(move_play2, player2.symbol)
-  #   board[move.to_i - 1] = 'O'
   display_board(new_game.board)
   game_on = win(new_game, game_on)
-  # break if !game_on
   
-  # count += 1
-  # win
-  #   game_on = false unless win.zero?
 end
