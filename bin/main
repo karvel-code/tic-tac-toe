@@ -64,6 +64,7 @@ while game_on
   display_board(new_game.board)
   game_on = win(new_game, game_on)
   break if game_on == false
+
   puts "#{player2.name} choose between 1 - 9"
   move_play2 = gets.chomp.to_i
   check_valid2 = new_game.validate(move_play2)
