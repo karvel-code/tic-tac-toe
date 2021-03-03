@@ -36,13 +36,13 @@ Ruby installed. Terminal / CMD.
 
 # Authors
 
-Elvis Githinji
+👤 Elvis Githinji
 
 Github: [@karvel-code](https://github.com/karvel-code)
 
 Linkedin: [@Elvis Githinji](https://www.linkedin.com/in/elvis-githinji-9a5032164/)
 
-Luqman Musah
+👤 Luqman Musah
 
 Github: [@luqmanmusah](https://github.com/luqmanmusah)
 
