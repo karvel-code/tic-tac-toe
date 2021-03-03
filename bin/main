@@ -38,12 +38,13 @@ new_game = GamePlay.new
 def win(new_game, game_on)
   winning = new_game.status
   game_on = false unless winning.zero?
-  if winning == 1
-    puts "Player 1 has won"
-  elsif winning == 2
-    puts "Player 2 has won"
-  elsif winning == 3
-    puts "Its is a tie"
+  case winning
+  when 1
+    puts 'Player 1 has won'
+  when 2
+    puts 'Player 2 has won'
+  when 3
+    puts 'Its is a tie'
   end
   game_on
 end
@@ -64,6 +65,7 @@ while game_on
   display_board(new_game.board)
   game_on = win(new_game, game_on)
   break if game_on == false
+
   puts "#{player2.name} choose between 1 - 9"
   move_play2 = gets.chomp.to_i
   check_valid2 = new_game.validate(move_play2)
@@ -76,5 +78,5 @@ while game_on
   new_game.board_update(move_play2, player2.symbol)
   display_board(new_game.board)
   game_on = win(new_game, game_on)
-  
+
 end
