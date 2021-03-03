@@ -1,6 +1,5 @@
 class GamePlay
   attr_reader :board
-
   def initialize
     @board = []
     9.times { @board.push(0) }
@@ -35,9 +34,11 @@ class GamePlay
 
   def check_winner(winning_combo)
     winning_combo.each do |combo|
-      return 1 if combo.all? { |position| @board[position].eql? 'X' }
-
-      return 2 if combo.all? { |position| @board[position].eql? 'O' }
+      if combo.all? { |position| @board[position].eql? 'X' }
+        return 1
+      elsif combo.all? { |position| @board[position].eql? 'O' }
+        return 2
+      end
     end
     0
   end
