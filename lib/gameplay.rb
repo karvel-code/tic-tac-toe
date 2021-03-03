@@ -1,5 +1,6 @@
 class GamePlay
   attr_reader :board
+
   def initialize
     @board = []
     9.times { @board.push(0) }

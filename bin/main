@@ -38,11 +38,12 @@ new_game = GamePlay.new
 def win(new_game, game_on)
   winning = new_game.status
   game_on = false unless winning.zero?
-  if winning == 1
+  case winning
+  when 1
     puts 'Player 1 has won'
-  elsif winning == 2
+  when 2
     puts 'Player 2 has won'
-  elsif winning == 3
+  when 3
     puts 'Its is a tie'
   end
   game_on
