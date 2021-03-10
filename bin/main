@@ -60,6 +60,7 @@ while game_on
     break if check_valid1[0]
 
   end
+
   new_game.board_update(move_play, player1.symbol)
   display_board(new_game.board)
   game_on = win(new_game, game_on)
@@ -74,7 +75,11 @@ while game_on
     check_valid2 = new_game.validate(move_play2)
     break if check_valid2[0]
   end
+
   new_game.board_update(move_play2, player2.symbol)
   display_board(new_game.board)
   game_on = win(new_game, game_on)
 end
+
+puts "#{player1.name} is the winner."
+puts 'GAME OVER'
