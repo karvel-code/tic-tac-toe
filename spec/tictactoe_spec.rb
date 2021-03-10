@@ -121,6 +121,19 @@ end
             end
         end
     end
-
+    describe Player do
+        subject { Player.new('player2', 'O') }
+        describe '#initialize' do
+          it 'initializes the name of the player' do
+            expect(subject.name).to eq('player2')
+          end
+          it 'initializes the symbol of the player' do
+            expect(subject.symbol).to eq('O')
+          end
+          it 'does not create the object if required attribute player_symbol is missing' do
+            expect { Player.new('second') }.to raise_error(ArgumentError)
+          end
+        end
+      end
 
 end

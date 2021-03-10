@@ -32,7 +32,7 @@ class GamePlay
 
     return_value
   end
-
+private
   def check_winner(winning_combo)
     winning_combo.each do |combo|
       if combo.all? { |position| @board[position].eql? 'X' }
@@ -44,6 +44,7 @@ class GamePlay
     0
   end
 
+  private
   def check_board
     @board.all? { |element| element.is_a? String }
   end
