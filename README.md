@@ -34,6 +34,20 @@ To get a local copy up and running follow these simple example steps.
 
 Ruby installed. Terminal / CMD.
 
+# Testing 
+- Open Terminal
+
+- Install RSpec on your system by running:
+ 
+```
+gem install rspec
+```
+
+- Run the tests with the command:
+
+```
+rspec 
+```
 # Authors
 
 👤 Elvis Githinji
