@@ -33,6 +33,8 @@ class GamePlay
     return_value
   end
 
+  private
+
   def check_winner(winning_combo)
     winning_combo.each do |combo|
       if combo.all? { |position| @board[position].eql? 'X' }
